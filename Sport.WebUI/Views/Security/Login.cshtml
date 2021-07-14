@@ -1,0 +1,120 @@
+﻿@model Sport.WebUI.Models.Security.LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="~/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Tekrar Hoşgeldin!</h1>
+                                    </div>
+                                    <form asp-controller="Security" asp-action="Login" method="post">
+                                        <div asp-validation-summary="All"></div>
+                                        <div class="form-group">
+                                            <input type="text" asp-for="UserName" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Kullanıcı Adınızı Giriniz...">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" asp-for="Password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Şifrenizi Giriniz...">
+                                        </div>
+                                        @*<div class="form-group">
+                                                <div class="custom-control custom-checkbox small">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                    <label class="custom-control-label" for="customCheck">Beni Hatırla</label>
+                                                </div>
+                                            </div>*@
+                                        <input type="submit" class="btn btn-primary btn-user btn-block" value="Giriş">
+                                        @* <a class="btn btn-primary btn-user btn-block" asp-area="" asp-controller="Home" asp-action="Calculator">Giriş</a>
+                                                                           <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                                Giriş
+                                            </a>*@
+                                        <hr>
+                                    </form>
+                                    <hr>
+                                    @*<div class="text-center">
+                                            <a class="small" href="">Şifrenizi mi Unuttunuz?</a>
+                                        </div>*@
+                                    <div class="text-center">
+                                        <a class="small" asp-area="" asp-controller="Security" asp-action="Register">Hesap Oluştur!</a>
+                                        @*<a class="small" href="register.html">Hesap Oluştur!</a>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script type="text/javascript">
+        var eMail = $("#exampleInputEmail").val();
+        var password = $("#exampleInputPassword").val();
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+@*@model Sport.WebUI.Models.Security.LoginViewModel
+    @{
+        Layout = null;
+    }
+
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>View</title>
+    </head>
+    <body>
+        <h3>Login</h3>
+        <form asp-controller="Security" asp-action="Login" method="post">
+            <div asp-validation-summary="All"></div>
+            <input type="text" asp-for="UserName" placeholder="User Name" /><br />
+            <input type="password" asp-for="Password" placeholder="Password" /><br />
+            <input type="submit" value="Login">
+        </form>
+    </body>
+    </html>*@

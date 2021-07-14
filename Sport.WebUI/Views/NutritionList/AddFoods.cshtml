@@ -1,0 +1,352 @@
+﻿
+@model Sport.Domain.Entities.NutritionList
+
+@{
+    int i = 11;
+}
+<div class="col-md-12">
+    <div class="row">
+        <table class="table table-responsive table-sm table-striped">
+            <thead>
+                <tr>
+                    <th>Pazartesi </th>
+                    <th>Salı</th>
+                    <th>Çarşamba</th>
+                    <th>Perşembe</th>
+                    <th>Cuma</th>
+                    <th>Cumartesi</th>
+                    <th>Pazar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="FoodAddButton">
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Sabah</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />      
+                            <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Sabah</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Sabah</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Sabah</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Sabah</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Sabah</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Sabah</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                    </td>
+                    @{i = i + 4; }
+                </tr>
+                <tr id="FoodAddButton">
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Ara öğün</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Ara öğün</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Ara öğün</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Ara öğün</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Ara öğün</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Ara öğün</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Ara öğün</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+
+                    </td>
+                    @{i = i + 4; }
+                </tr>
+                <tr id="FoodAddButton">
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Öğle</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Öğle</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Öğle</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Öğle</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Öğle</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Öğle</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Öğle</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                    </td>
+                    @{i = i + 4; }
+                </tr>
+                <tr id="FoodAddButton">
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Ara öğün</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Ara öğün</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Ara öğün</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Ara öğün</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Ara öğün</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Ara öğün</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Ara öğün</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                    </td>
+                    @{i = i + 4; }
+                </tr>
+                <tr id="FoodAddButton">
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Akşam</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Akşam</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Akşam</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Akşam</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Akşam</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Akşam</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/NutritionList/AddFoodForThat">
+                            <label>Akşam</label><br />
+                            <input type="text" id="ogunGun" name="ogunGun" value="@i" hidden="hidden" />
+                            <input type="text" id="nutritionListId" name="nutritionListId" value="@Model.Id" hidden="hidden" />
+                              <input type="submit" class="btn btn-primary" value="Besin Ekle" />
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

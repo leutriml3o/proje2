@@ -1,0 +1,35 @@
+﻿@model Sport.Domain.Entities.SportList
+
+@{
+    ViewData["Title"] = "Detaylar";
+}
+
+<h3>Detaylar</h3>
+<div>
+    @*<h4>Beslenme Listesi</h4>*@
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            <label>Spor Listesi İsmi</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            <label>Liste Açıklaması</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            <label>Liste Tipi </label>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EnumSportType)
+        </dd>
+    </dl>
+</div>
+<div>
+    @*<a asp-action="EditSportList" asp-route-id="@Model.Id">Güncelle</a> |*@
+    <a asp-action="GetAllSportList" class="btn btn-primary">Spor Listesi</a>
+</div>

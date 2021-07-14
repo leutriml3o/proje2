@@ -1,0 +1,49 @@
+﻿@model Sport.Domain.Entities.SportList
+
+
+@{
+    ViewData["Title"] = "Beslenme Listesi Ekle";
+}
+
+
+@section NormalLayout{
+    <div class="main-w3pvt mian-content-wthree text-center" id="home">
+        <div class="container">
+            <br />
+            <h3>Spor Listesi Oluştur</h3>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="CreateSportList">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label">Sport Listesi İsmi</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Description" class="control-label">Liste Açıklaması</label>
+                            <input asp-for="Description" class="form-control" />
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EnumSportType" class="control-label">Liste Tipi</label>
+                            <select asp-for="EnumSportType" class="form-control" style="width:200px;">
+                                <option value="0">Zayıflama</option>
+                                <option value="1">Koruma</option>
+                                <option value="2">Gelişme </option>
+                            </select>
+                            <span asp-validation-for="EnumSportType" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Ekle" class="btn btn-primary" />
+                        </div>
+                        <div>
+                            <a asp-controller="SportList" asp-action="GetAllSportList" class="btn btn-warning">Spor Listesi</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}

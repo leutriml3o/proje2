@@ -1,0 +1,113 @@
+﻿@model IEnumerable<Sport.Domain.Entities.NutritionList>
+
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    ViewData["Title"] = "Besinler";
+}
+
+@section Classlar{
+
+
+    <link href="~/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="~/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="~/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="~/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="~/startbootstrap-sb-admin-2-gh-pages/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet"> }
+
+<h4>Kayıtlı Listeleriniz</h4>
+@if (User.IsInRole("User") || User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="CreateNutritionList">Liste Oluştur</a>
+    </p>
+}
+<div class="card shadow mb-4">
+    <div class="card-header py-3" style="background-color:darkgrey">
+        <h6 class="m-0 font-weight-bold text-primary" style="color:coral">Beslenme Listesi</h6>
+    </div>
+    <div class="card-body" style="background-color:white">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="besinListeTablosu" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            <label>Liste İsmi</label>
+                        </th>
+                        <th>
+                            <label>Toplam Kalori Miktarı</label>
+                        </th>
+                        <th>
+                            <label>Beslenme Tipi</label>
+                        </th>
+                        <th>
+                            <label>Gelişim Tipi</label>
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TotalCaloriValue)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EnumNutritionType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EnumNutritionKind)
+                            </td>
+                            <td>
+                                @*<a asp-action="EditNutritionList" asp-route-id="@item.Id" class="btn btn-info btn-sm">Güncelle</a> |*@
+                                <a asp-action="DetailsNutritionList" asp-route-id="@item.Id" class="btn btn-success btn-sm">Detay</a>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <a class="btn btn-warning" asp-action="AddFoods" asp-route-id="@item.Id">Listeye Besin Ekle</a>
+                                    <a class="btn btn-danger" asp-action="NutritionListView" asp-route-id="@item.Id">Liste</a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@section Script{
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/js/demo/datatables-demo.js"></script>
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+            $('#besinListeTablosu').DataTable({
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Turkish.json"
+                }
+            });
+        });
+    </script>
+
+}

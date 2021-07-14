@@ -1,0 +1,70 @@
+﻿@model Sport.WebUI.ViewModels.QuestionsViewModel
+
+<br />
+
+<label class="control-label">Beslenme Programı </label>
+
+<div class="form-group">
+
+    <select class="form-control" style="width:200px;" id="vejeteryanId" asp-for="Vejeteryan">
+        <option selected value="0">-- Vejeteryan mısınız --</option>
+        <option value="1">Evet</option>
+        <option value="2">Hayır</option>
+    </select>
+    <span class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <select class="form-control" style="width:200px;" id="besinId" asp-for="BesinDegeri">
+        <option selected value="0">-- Besin Değerinizi Seçin --</option>
+        <option value="1">Düşük Besin Değeri</option>
+        <option value="2">Orta Besin Değeri</option>
+        <option value="3">Yüksek Besin Değeri</option>
+    </select>
+    <span class="text-danger"></span>
+</div>
+
+<button type="button" class="btn btn-success btn-lg" onclick="myFunction()">Program Oluştur</button>
+
+
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script>
+    function myFunction() {
+        var besin = $("#besinId").val();
+        var vejeteryan = $("#vejeteryanId").val();
+
+        var url = "/NutritionList/QuestionsResult";
+        var jsonData = {
+            BesinDegeri: besin,
+            Vejeteryan: vejeteryan,
+        };
+
+        console.log(jsonData);
+
+        $.post(url, { jsonData }, function (data) {
+            if (data.status == 0) {
+                alert(data.message);
+            }
+            if (data.status == 1) {
+                alert(data.message);
+                location.href = data.redirect;
+            }
+            if (data.status == 2) {
+                alert(data.message);
+                location.href = data.redirect;
+            }
+            if (data.status == 3) {
+                alert(data.message);
+                location.href = data.redirect;
+            }
+            if (data.status == 4) {
+                alert(data.message);
+                location.href = data.redirect;
+            }
+        }, "json");
+    }
+</script>

@@ -1,0 +1,497 @@
+﻿@model Sport.WebUI.Entities.ViewInfo
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    ViewData["Title"] = "Bilgileriniz";
+}
+@*@section js{
+        <script>
+            addEventListener("load", function () {
+                setTimeout(hideURLbar, 0);
+            }, false);
+
+            function hideURLbar() {
+                window.scrollTo(500, 501);
+            }
+        </script>
+
+    }*@
+@section Classlar{
+
+    <link rel="canonical" href="https://tdeecalculator.net/result.php?s=metric&g=male&age=23&kg=78.9&cm=170&act=1.55&bf=19&f=1">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://tdeecalculator.net/assets/css/bootstrap-full.css?1501042105">
+    <link rel="stylesheet" type="text/css" href="https://tdeecalculator.net/assets/css/style.css?1501042095">
+    <style>
+        .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    </style>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+}
+<div id="secured-message" class="container hidden-xs"><small class="text-muted"> <span class="glyphicon glyphicon-lock" style="color:#4D9A26;"></span></small></div>
+<div class="container">
+    <div class="result">
+        <div class="clearfix">
+            <h1 id="yourstats" class="pull-left">İSTATİKLERİNİZ</h1>
+            <div style="display:inline;position:relative;left:13px;top:6px;" class="fb-like" data-href="" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+            <div class="questions hidden-xs">
+                <em>Sorularınız için bize test@test.com mail adresinden ulaşabilirsiniz.</em>
+            </div>
+        </div>
+        <style>
+            table td {
+                padding: 7px 2px;
+            }
+        </style>
+        <form class="form-inline hidden-xs">
+            <table></table>
+        </form>
+        <p class="stats visible-xs"><strong></strong>.</p>
+
+        <hr class="style2">
+        <div class="row">
+            <div class="col-sm-4" style="padding-left:0;">
+                <p class="bold text-center">Bakım Kalorileriniz</p>
+                <div id="tdee-cals">
+                    <div style="padding-top:25px;">
+                        <span class="h2">@Model.Selection</span>
+                        <br>
+                        <span class="cals">günlük kalori miktarı</span>
+                    </div>
+                    <hr>
+                    <div>
+                        <span class="h2">@Model.WeeklyCalories</span>
+                        <br>
+                        <span class="cals">haftalık kalori miktarı</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-8" style="padding-right:0;">
+
+                <p>İstatiklerinize dayanarak,bakım kalorileriniz için en iyi tahmin Katch-McArdle formülüne sağlanmıştır.Aşağıdaki tablo,farklı bir aktivite seviyesi seçmiş olmanız durumunda farklı gösterir.</p>
+
+                <table class="table table-condensed" id="bmr-table" style="margin-bottom:10px;">
+                    <tbody>
+                        <tr>
+                            <td><big>Bazal Metabolizma </big></td>
+                            <td>Günlük <big>@Model.BasalMetabolic kalori</big></td>
+                        </tr>
+
+                        <tr>
+                            <td><big>Hareketsiz</big></td>
+                            <td><big>Günlük @Model.Sedentary kalori</big></td>
+                        </tr>
+                        <tr>
+                            <td><big>Hafif Egzersiz</big></td>
+                            <td><big>Günlük @Model.LightExercise kalori</big></td>
+                        </tr>
+
+                        <tr>
+                            <td><big>Orta Egzersiz</big></td>
+                            <td><big>Günlük @Model.ModerateExercise kalori</big></td>
+                        </tr>
+
+                        <tr>
+                            @*<tr class="success2">*@
+                            <td><big>Ağır Egzersiz</big></td>
+                            <td><big>Günlük @Model.HeavyExercise kalori</big></td>
+                        </tr>
+
+                        <tr>
+                            <td><big>Atlet</big></td>
+                            <td><big>Günlük @Model.Athlete kalori</big></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div> <!-- end col-sm-8 -->
+        </div> <!-- end .row -->
+
+        <div class="row">
+
+            <div class="col-sm-6" style="padding-left:0;">
+
+                <h2><big>İdeal Ağırlığınız:@Model.min- @Model.max </big></h2>
+
+                <p>İdeal vücüt ağırlığınız,aşağıda listenen çeşitli formüllere göre tahmin edilmektedir.Bu formüller boyunuza dayanır ve ortalamaları temsil eder.Bu nedenle ağırlık çalışması formülleri çok ciddiye almayın.</p>
+
+                <table class="table table-condensed mb0">
+                    <tr>
+                        <td><big>G.J. Hamwi Formula (1964)</big></td>
+                        <td><big>@Model.FHamwi</big></td>
+                    </tr>
+
+                    <tr>
+                        <td><big>B.J. Devine Formula (1974)</big></td>
+                        <td><big>@Model.FDevine</big></td>
+                    </tr>
+
+                    <tr>
+                        <td><big>J.D. Robinson Formula (1983)</big></td>
+                        <td><big>@Model.FRobinson</big></td>
+                    </tr>
+
+                    <tr>
+                        <td><big>D.R. Miller Formula (1983)</big></td>
+                        <td><big>@Model.FMiller</big></td>
+                    </tr>
+                </table>
+            </div> <!-- end col-sm-6 -->
+
+
+            <div class="col-sm-6 " style="padding-right:0;">
+
+                <h2><big>BMI Puanı @Model.BMI</big></h2>
+
+                <p></p>
+
+                <p>Aşağıdaki tabloda BMI puanınıza göre hangi standartta olduğunuz gözükmektedir.</p>
+
+
+                <table class="table table-condensed mb0">
+                    <tbody>
+                        <tr>
+                            @{ if (Model.BMI < 18.5)
+                                {
+                                    <td><b><big><strong>18.5 veya aşağısı</strong></big></b></td>
+                                    <td><b><big><strong>Zayıf</strong></big></b></td>
+                                }
+                                else
+                                {
+                                    <td><big><strong>18.5 veya aşağısı</strong></big></td>
+                                    <td><big><strong>Zayıf</strong></big></td>
+
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @{ if (Model.BMI > 18.5 && Model.BMI < 25)
+                                {
+                                    <td><b><big><strong>18-25 Arası</strong></big></b></td>
+                                    <td><b><big><strong>Normal</strong></big></b></td>
+                                }
+                                else
+                                {
+                                    <td><big>18-25 Arası</big></td>
+                                    <td><big>Normal</big></td>
+
+                                }
+                            }
+                        </tr>
+                        @*<tr class="success2">*@
+                        <tr>
+                            @{ if (Model.BMI > 25 && Model.BMI < 29.99)
+                                {
+                                    <td><b><big><strong>25-29.99 Arası</strong></big></b></td>
+                                    <td><b><big><strong>Kilolu</strong></big></b></td>
+                                }
+                                else
+                                {
+                                    <td><big>25-29.99 Arası</big></td>
+                                    <td><big>Kilolu</big></td>
+
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @{ if (Model.BMI > 30)
+                                {
+                                    <td><b><big><strong>30+</strong></big></b></td>
+                                    <td><b><big><strong>Şişman</strong></big></b></td>
+                                }
+                                else
+                                {
+                                    <td><big>30+</big></td>
+                                    <td><big>Şişman</big></td>
+
+                                }
+                            }
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div> <!-- end col-sm-6 -->
+        </div> <!-- end row -->
+
+        <h2>Maksimum Kas Potansiyeli</h2>
+        <div id="lock-my-div">
+            <p>Nasıl yırtılırsın? Aşağıdaki Makro Besinler tablomuzu takip et.</p>
+        </div>
+
+        <h2 class="mt15">Makro Besinler</h2>
+        <ul class="nav nav-tabs" role="tablist" id="macro-tabs">
+            <li role="presentation" class="active">
+                <a href="#maintenance" aria-controls="maintenance" role="tab" data-toggle="tab">Koruma</a>
+            </li>
+            <li role="presentation">
+                <a href="#cutting" aria-controls="cutting" role="tab" data-toggle="tab">Definasyon</a>
+            </li>
+            <li role="presentation">
+                <a href="#bulking" aria-controls="bulking" role="tab" data-toggle="tab">Hacimde Artış</a>
+            </li>
+            <li role="presentation" class="disabled pull-right hidden-xs">
+                <a class="disabled"><small>30/35/35 demek 30% protein, 35% yağ, 35% karbonhidrat</small></a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="maintenance">
+
+                <div class="row">
+                    <p>Bu makro besin değerleri, günlük bakım kalorilerinizi yansıtır <strong> @Model.Selection</strong> günlük almanız gereken kalori miktarı.</p><br>
+                    <div class="col-sm-4" style="padding-left:0;padding-right:0;">
+                        <span style="display:inline-block;" class="label label-primary text-center type">Orta Besin Değerleri (30/35/35)</span>
+                        <div class="macrobox">
+                            <div>
+                                <span class="h2"><abbr title="812 calories">@Model.maintenanceModerateProtein</abbr></span>
+                                <br>
+                                <span class="cals">protein</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="954 calories">@Model.maintenanceModerateFats</abbr></span>
+                                <br>
+                                <span class="cals">yağ</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="948 calories">@Model.maintenanceModerateCarbs</abbr></span>
+                                <br>
+                                <span class="cals">karbonhidart</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4" style="padding-left:0;padding-right:0;">
+                        <span style="display:inline-block;margin:0 auto;" class="label label-primary text-center">Düşük Besin Değerleri  (40/40/20)</span>
+                        <div class="macrobox">
+                            <div>
+                                <span class="h2"><abbr title="1084 calories">@Model.maintenanceLowerProtein</abbr></span>
+                                <br>
+                                <span class="cals">protein</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="1089 calories">@Model.maintenanceLowerFats</abbr></span>
+                                <br>
+                                <span class="cals">yağ</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="544 calories">@Model.maintenanceLowerCarbs</abbr></span>
+                                <br>
+                                <span class="cals">karbonhidrat</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4" style="padding-left:0;padding-right:0;">
+                        <span style="display:inline-block;" class="label label-primary text-center">Yüksek Besin Değerleri (30/20/50)</span>
+                        <div class="macrobox">
+                            <div>
+                                <span class="h2"><abbr title="812 calories">@Model.maintenanceHigherProtein</abbr></span>
+                                <br>
+                                <span class="cals">protein</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="540 calories">@Model.maintenanceHigherFats</abbr></span>
+                                <br>
+                                <span class="cals">yağ</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="1356 calories">@Model.maintenanceHigherCarbs</abbr></span>
+                                <br>
+                                <span class="cals">karbonhidrat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end row -->
+
+            <div role="tabpanel" class="tab-pane" id="cutting">
+
+                <div class="row">
+                    <p>Bu makro besin değerleri, günlük bakım kalorilerinizi yansıtır <strong>@Model.Selection.</strong> Definasyon için 500 kalori açığı oluşturun.<strong>@(Model.Selection - 500)</strong> almanız gereken kalori miktarı.</p>
+                    <div class="col-sm-4" style="padding-left:0;padding-right:0;">
+                        <span style="display:inline-block;" class="label label-primary text-center type">Orta Besin Değerleri (30/35/35)</span>
+                        <div class="macrobox">
+                            <div>
+                                <span class="h2"><abbr title="664 calories">@Model.cuttingModerateProtein</abbr></span>
+                                <br>
+                                <span class="cals">protein</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="774 calories">@Model.cuttingModerateFats</abbr></span>
+                                <br>
+                                <span class="cals">yağ</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="776 calories">@Model.cuttingModerateCarbs</abbr></span>
+                                <br>
+                                <span class="cals">karbonhidrat</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4" style="padding-left:0;padding-right:0;">
+                        <span style="display:inline-block;margin:0 auto;" class="label label-primary text-center">Düşük Besin Değerleri (40/40/20)</span>
+                        <div class="macrobox">
+                            <div>
+                                <span class="h2"><abbr title="884 calories">@Model.cuttingLowerProtein</abbr></span>
+                                <br>
+                                <span class="cals">protein</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="882 calories">@Model.cuttingLowerFats</abbr></span>
+                                <br>
+                                <span class="cals">yağ</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="444 calories">@Model.cuttingLowerCarbs</abbr></span>
+                                <br>
+                                <span class="cals">karbonhidrat</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4" style="padding-left:0;padding-right:0;">
+                        <span style="display:inline-block;" class="label label-primary text-center">Yüksek Besin Değerleri (30/20/50)</span>
+                        <div class="macrobox">
+                            <div>
+                                <span class="h2"><abbr title="664 calories">@Model.cuttingHigherProtein</abbr></span>
+                                <br>
+                                <span class="cals">protein</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="441 calories">@Model.cuttingHigherFats</abbr></span>
+                                <br>
+                                <span class="cals">yağ</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="1108 calories">@Model.cuttingHigherCarbs</abbr></span>
+                                <br>
+                                <span class="cals">karbonhidrat</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- end row -->
+
+            </div> <!-- end #cutting -->
+            <div role="tabpanel" class="tab-pane" id="bulking">
+
+                <div class="row">
+                    <p>Bu makro besin değerleri, günlük bakım kalorilerinizi yansıtır <strong>@Model.Selection</strong> Bulk için 500 kalori fazlası oluşturun.<strong>@(Model.Selection + 500)</strong> almanız gereken kalori miktarı.</p>
+                    <div class="col-sm-4" style="padding-left:0;padding-right:0;">
+                        <span style="display:inline-block;" class="label label-primary text-center type">Orta Besin Değerleri (30/35/35)</span>
+                        <div class="macrobox">
+                            <div>
+                                <span class="h2"><abbr title="964 calories">@Model.bulkingModerateProtein</abbr></span>
+                                <br>
+                                <span class="cals">protein</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="1125 calories">@Model.bulkingModerateFats</abbr></span>
+                                <br>
+                                <span class="cals">yağ</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="1124 calories">@Model.bulkingModerateCarbs</abbr></span>
+                                <br>
+                                <span class="cals">karbonhidrat</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4" style="padding-left:0;padding-right:0;">
+                        <span style="display:inline-block;margin:0 auto;" class="label label-primary text-center">Düşük Besin Değerleri (40/40/20)</span>
+                        <div class="macrobox">
+                            <div>
+                                <span class="h2"><abbr title="1284 calories">@Model.bulkingLowerProtein</abbr></span>
+                                <br>
+                                <span class="cals">protein</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="1287 calories">@Model.bulkingLowerFats</abbr></span>
+                                <br>
+                                <span class="cals">yağ</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="644 calories">@Model.bulkingLowerCarbs</abbr></span>
+                                <br>
+                                <span class="cals">karbonhidrat</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4" style="padding-left:0;padding-right:0;">
+                        <span style="display:inline-block;" class="label label-primary text-center">Yüksek Besin Değerleri(30/20/50)</span>
+                        <div class="macrobox">
+                            <div>
+                                <span class="h2"><abbr title="1284 calories">@Model.bulkingHigherProtein</abbr></span>
+                                <br>
+                                <span class="cals">protein</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="1287 calories">@Model.bulkingHigherFats</abbr></span>
+                                <br>
+                                <span class="cals">yağ</span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="h2"><abbr title="644 calories">@Model.bulkingHigherCarbs</abbr></span>
+                                <br>
+                                <span class="cals">karbonhidrat</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- end row -->
+
+            </div> <!-- end #bulking -->
+        </div> <!-- end .tab-content -->
+        <p class="mt10 text-center"><small>Protein ve karbonhidratın 1 gramında 4 kalori,1 gr yağda ise 9 kalori vardır.</small></p>
+
+        <!--Link vermeyi unutma-->
+        <p><strong>Nasıl başlayacağından emin değilmisin?</strong> <a target="_blank" asp-action="Register" asp-controller="Security" rel="nofollow" class="clicky_log_outbound">Detaylı beslenme ve spor programları için üye ol.</a> 💪</p>
+
+        @section Script{
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+            <script src="https://tdeecalculator.net/assets/js/site.js"></script>
+            <script src="//static.getclicky.com/js" type="text/javascript"></script>
+            <script type="text/javascript">try { clicky.init(100814305); } catch (e) { }</script>
+            <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100814305ns.gif" /></p></noscript>
+
+            @*<script>
+                    $('#macrotabs a').click(function (e) {
+                        e.preventDefault();
+                        $(this).tab('show');
+                    });
+
+                    $("#clickplus").click(function () {
+                        $("#linkreveal").slideDown("slow", function () {
+                            // Animation complete.
+                        });
+                    });
+                </script>*@
+        }
+
+

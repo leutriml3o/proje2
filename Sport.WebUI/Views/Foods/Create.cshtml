@@ -1,0 +1,81 @@
+﻿@model Sport.Domain.Entities.Food
+
+@{
+    ViewData["Title"] = "Besin Ekle";
+}
+
+@section NormalLayout{
+    <div class="main-w3pvt mian-content-wthree text-center" id="home">
+        <div class="container">
+            <h3>Besin ekleme sayfası</h3>
+
+            <h6>100 Gr için besin değerlerini giriniz</h6>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label">Besin İsmi</label>
+                            <input asp-for="Name" class="form-control" placeholder="İsim" value="" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CaloriValue" class="control-label">Kalori değeri</label>
+                            <input asp-for="CaloriValue" class="form-control" placeholder="Kalori" value="" />
+                            <span asp-validation-for="CaloriValue" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ProteinValue" class="control-label">Protein değeri</label>
+                            <input asp-for="ProteinValue" class="form-control" placeholder="Protein" value="" />
+                            <span asp-validation-for="ProteinValue" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CarbohydrateValue" class="control-label">Karbonhidrat değeri</label>
+                            <input asp-for="CarbohydrateValue" class="form-control" placeholder="Karbonhidrat" value="" />
+                            <span asp-validation-for="CarbohydrateValue" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="OilValue" class="control-label">Yağ değeri</label>
+                            <input asp-for="OilValue" class="form-control" placeholder="Yağ" value="" />
+                            <span asp-validation-for="OilValue" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="FiberValue" class="control-label">Lif değeri</label>
+                            <input asp-for="FiberValue" class="form-control" placeholder="Lif" value="" />
+                            <span asp-validation-for="FiberValue" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="FoodPhoto" class="control-label">Fotoğraf</label>
+                            <input asp-for="FoodPhoto" class="form-control" placeholder="Fotoğraf" value="" />
+                            <span asp-validation-for="FoodPhoto" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EnumFoodType" class="control-label">Besin Türü</label>
+                            <select asp-for="EnumFoodType" class="form-control" style="width:200px;">
+                                <option value="0">Kırmızı Et </option>
+                                <option value="1">Beyaz Et</option>
+                                <option value="2">Meyve</option>
+                                <option value="3">Sebze</option>
+                                <option value="4">Bakliyat</option>
+                                <option value="5">Çerez</option>
+                                <option value="6">Sıvı</option>
+                                <option value="7">Ekmek Ve Tahıl Grubu</option>
+                                <option value="8">Süt Grubu</option>
+                                <option value="9">Yağ Grubu</option>
+                            </select>
+                            <span asp-validation-for="EnumFoodType" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Besin Ekle" class="btn btn-primary" />
+                        </div>
+                        <div>
+                            <a asp-controller="Foods" asp-action="Index" class="btn btn-warning">Besin Listesi</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    }

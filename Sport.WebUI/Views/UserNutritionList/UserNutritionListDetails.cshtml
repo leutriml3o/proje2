@@ -1,0 +1,47 @@
+﻿@model Sport.WebUI.ViewModels.UserNutritionListDetails
+
+
+<label>
+    @*@Html.DisplayNameFor(model => model.appUser.UserName)*@
+    @Html.DisplayFor(modelItem => modelItem.appUser.UserName)  Diyet Listesi
+</label>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <label>Besin İsmi</label>
+            </th>
+            <th>
+                <label>Hangi Öğün </label>
+            </th>
+            <th>
+                <label>Hangi Gün</label>
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.nutritionLists)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Food.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThatDay.EnumMealType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThatDay.NutritionDays.Name)
+                </td>
+                @*<td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>*@
+            </tr>
+        }
+    </tbody>
+</table>

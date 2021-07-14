@@ -1,0 +1,98 @@
+﻿@model Sport.WebUI.Models.ProfileInfo
+
+
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    ViewData["Title"] = "Profil";
+}
+@section Classlar{
+    <link href="~/profile/civic/img/favicon.ico" rel="shortcut icon" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
+    <link href="~/profile/civic/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/profile/civic/css/flaticon.css" rel="stylesheet" />
+    <link href="~/profile/civic/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/profile/civic/css/magnific-popup.css" rel="stylesheet" />
+    <link href="~/profile/civic/css/owl.carousel.css" rel="stylesheet" />
+    <link href="~/profile/civic/css/style.css" rel="stylesheet" />
+}
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<div class="home-four-style">
+    <!-- Header section start -->
+    <header class="header-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="site-logo">
+                        <h2>@User?.Identity?.Name.ToUpper()</h2>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <!-- Header section end -->
+
+    <div class="container-fluid p-0">
+        <div class="row m-0">
+            <div class="col-xl-5 col-lg-5 p-0">
+                <div class="main-left-area h-100">
+                    <section class="intro-section">
+                        <figure class="hero-image">
+                            <img src="~/profile/civic/img/hero-3.jpg" alt="">
+                        </figure>
+
+
+                        <div class="hero-info pt-5">
+                            <h2>Bilgileriniz</h2>
+                            <ul>
+                                <li><span>Kaloriniz : </span>@Model.Calorie</li>
+                                <li><span>Yaşınız : </span>@Model.Age</li>
+                                <li><span>Yağ Oranınız : </span>@Model.FatRate</li>
+                                <li><span>Boyunuz : </span>@Model.Height</li>
+                                <li><span>Kilonuz : </span>@Model.Weight</li>
+                                <li><span>E-Mailiniz : </span>@Model.Email</li>
+
+                            </ul>
+                        </div>
+                    </section>
+
+
+
+
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-7">
+                <div class="main-right-area">
+
+                    <label class="hero-info pt-1">Meyve ve sebze vücudun en büyük sağlık deposudur.</label>
+                    <br />
+                    <br />
+                    <br />
+                    <img src="~/startbootstrap-sb-admin-2-gh-pages/img/ef5b6df424a26883234ecfe857a85781.jpg" />
+                    <!-- buraya ne istersen o gelicek-->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer section start -->
+<!-- Footer section end -->
+<!--====== Javascripts & Jquery ======-->
+
+@section Script{
+    <script src="~/profile/civic/js/bootstrap.min.js"></script>
+    <script src="~/profile/civic/js/circle-progress.min.js"></script>
+    <script src="~/profile/civic/js/jquery-2.1.4.min.js"></script>
+    <script src="~/profile/civic/js/magnific-popup.min.js"></script>
+    <script src="~/profile/civic/js/main.js"></script>
+    <script src="~/profile/civic/js/owl.carousel.min.js"></script>
+}

@@ -1,0 +1,76 @@
+﻿@model Sport.WebUI.ViewModels.QuestionsSportViewModel
+
+<br />
+
+<label class="control-label">Spor Programı </label>
+@*<div class="form-group">
+    <select class="form-control" style="width:200px;" id="gunId">
+        <option selected value="0">--Haftada Kaç Gün Spor Yapabilirsiniz--</option>
+        <option value="6">6 gün</option>
+        <option value="5">5 gün</option>
+        <option value="4">4 gün</option>
+        <option value="3">3 gün</option>
+    </select>
+    <span class="text-danger"></span>
+</div>*@
+
+<div class="form-group">
+    <select class="form-control" style="width:200px;" id="bolgeId">
+        <option selected value="0">-- Hangi Bölgeleri Çalışmak İstersiniz --</option>
+        <option value="1">Full Body</option>
+        <option value="2">Karın</option>
+        <option value="3">Omuz</option>
+        <option value="4">Bacak</option>
+    </select>
+    <span class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <select class="form-control" style="width:200px;" id="haraketId">
+        <option selected value="0">-- Haraket Alanınızı Seçiniz --</option>
+        <option value="1">Zayıflama</option>
+        <option value="2">Koruma</option>
+        <option value="3">Geliştirme</option>
+    </select>
+    <span class="text-danger"></span>
+</div>
+
+
+<button type="button" class="btn btn-success btn-lg" onclick="myFunction()">Program Oluştur</button>
+
+
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script>
+    function myFunction() {
+        var gun = $("#gunId").val();
+        var bolge = $("#bolgeId").val();
+        var haraket = $("#haraketId").val();
+
+        var url = "/SportList/QuestionsSportResult";
+        var jsonData = {
+            Gun: gun,
+            Bolge: bolge,
+            Haraket: haraket,
+        };
+
+        console.log(jsonData);
+
+        $.post(url, { jsonData }, function (data) {
+            if (data.status == 0) {
+                alert(data.message);
+            }
+            if (data.status == 1) {
+                alert(data.message);
+                location.href = data.redirect;
+            }
+            if (data.status == 2) {
+                alert(data.message);
+                location.href = data.redirect;
+            }
+        }, "json");
+    }
+</script>

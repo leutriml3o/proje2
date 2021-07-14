@@ -1,0 +1,59 @@
+﻿@model Sport.Domain.Entities.Movement
+
+@{
+    ViewData["Title"] = "Güncelle";
+}
+@section NormalLayout{
+
+    <div class="main-w3pvt mian-content-wthree text-center" id="home">
+        <div class="container">
+            <h4>Hareket güncelle</h4>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label asp-for="MovementName" class="control-label">Hareket İsmi</label>
+                            <input asp-for="MovementName" class="form-control" />
+                            <span asp-validation-for="MovementName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="MovementPhoto" class="control-label">Hareket Fotoğraf</label>
+                            <input asp-for="MovementPhoto" class="form-control" />
+                            <span asp-validation-for="MovementPhoto" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="MovementDescription" class="control-label">Hareket Açıklama</label>
+                            <input asp-for="MovementDescription" class="form-control" />
+                            <span asp-validation-for="MovementDescription" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EnumMovementType" class="control-label">Hareket Bölgesi</label>
+                            <select asp-for="EnumMovementType" class="form-control" style="width:200px;">
+                                <option value="0">Göğüs </option>
+                                <option value="1">Sırt</option>
+                                <option value="2">Omuz </option>
+                                <option value="3">Ön Kol</option>
+                                <option value="4">Arka Kol </option>
+                                <option value="5">Bacak </option>
+                                <option value="6">Kardiyo</option>
+                                <option value="6">Karın</option>
+                            </select>
+                            <span asp-validation-for="EnumMovementType" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Güncelle" class="btn btn-primary" />
+                        </div>
+                        <div>
+                            <a asp-action="Index" class="btn btn-warning">Hareket Listesi</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+}

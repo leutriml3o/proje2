@@ -1,0 +1,61 @@
+﻿@model Sport.WebUI.ViewModels.SelectMovementAndAreaViewModel
+
+
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+@section Classlar{
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="~/webb/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/webb/css/style.css" rel="stylesheet" />
+    <link href="~/chosen.min.css" rel="stylesheet" />
+}
+
+<input type="text" id="that" value="@Model.areaId" hidden="hidden" />
+
+<select id="multipleDropdown" multiple="multiple">
+    @foreach (var item in Model.allMovements)
+    {
+        <option value="@item.Id">@item.MovementName</option>
+    }
+</select>
+<hr />
+
+
+<button id="sendSelectedMovements" class="btn btn-primary"> Listeye Hareket Ekle</button>
+
+
+@section Script{
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <script type="text/javascript">
+        function displayVals() {
+            var multipleValues = $("#multipleDropdown").val() || [];
+            console.log(multipleValues);
+            return multipleValues;
+        }
+        $(document).on('click', '#sendSelectedMovements', function (e) {
+            var movements = displayVals();
+            console.log("selected movements -> " + movements);
+            var areaId = $("#that").val();
+            console.log("selected area -> " + areaId);
+            var jsonData = {
+                "selectedMovementIdArray": movements,
+                "areaId": areaId
+            };
+
+            var url = "/SportList/MovementsPost";
+
+            $.post(url, { jsonData }, function (data) {
+                alert("Listeye hareket ekleme başarılı");
+                window.location.href = "https://localhost:44324/SportList/GetAllSportList";
+
+            }, "json");
+        });
+    </script>
+}

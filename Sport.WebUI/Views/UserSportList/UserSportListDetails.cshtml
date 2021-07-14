@@ -1,0 +1,44 @@
+﻿@model Sport.WebUI.ViewModels.UserSportListDetails
+
+
+
+@*@Html.DisplayNameFor(model => model.appUser.UserName)*@
+@Html.DisplayFor(modelItem => modelItem.appUser.UserName)
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Hangi Gün
+            </th>
+            <th>
+            </th>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.sportLists)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Area.SportDay.Name)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Area.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Movement.MovementName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Movement.MovementDescription)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

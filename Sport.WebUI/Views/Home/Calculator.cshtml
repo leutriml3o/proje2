@@ -1,0 +1,54 @@
+﻿@model Sport.WebUI.Models.CalorieCalculatorViewModel
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    ViewData["Title"] = "Hesaplama";
+}
+@section NormalLayout{
+    <div class="main-w3pvt mian-content-wthree text-center" id="home">
+        <div class="container">
+            <div class="style-banner mx-auto">
+                <h3 class="text-wh font-weight-bold">Daha <span>Fit</span> bir görünüme sahip olmak için</h3>
+                <p class="mt-2 text-li" id="find">Aşağıdan hesaplamalarınızı yapabilirsiniz.</p>
+                <!-- form -->
+                <div class="home-form-w3ls mt-5 pt-lg-4">
+                    <form asp-controller="Home" asp-action="Calculator" method="post">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <select asp-for="calorieCalculator.CalorieCalculatorGender" class="form-control">
+                                        <option value="0">Erkek</option>
+                                        <option value="1">Kadın</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input asp-for="calorieCalculator.CalorieCalculatorAge" type="text" class="form-control" maxlength="3" placeholder="Yaşınız" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input asp-for="calorieCalculator.CalorieCalculatorWeight" type="text" class="form-control" maxlength="5" placeholder="Kilonuz" value="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input asp-for="calorieCalculator.CalorieCalculatorHeight" type="text" class="form-control" maxlength="5" placeholder="Boyunuz" value="">
+                                </div>
+                                <div class="form-group">
+                                    <select asp-for="calorieCalculator.CalorieCalculatorActivity" class="form-control">
+                                        <option value="0">Haraketsiz</option>
+                                        <option value="1">Hafif Egzersiz</option>
+                                        <option value="2">Orta Egzersiz</option>
+                                        <option value="3">Ağır Agzersiz</option>
+                                        <option value="4">Atlet</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input asp-for="calorieCalculator.CalorieCalculatorBodyFat" type="text" class="form-control" placeholder="Yağ Oranınız" maxlength="4" value="">                                   
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-submit btn-lg" name="submit">Kalori Hesapla</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}

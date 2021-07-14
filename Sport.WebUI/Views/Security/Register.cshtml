@@ -1,0 +1,152 @@
+﻿
+@model Sport.WebUI.Models.Security.RegisterViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    <link href="~/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="~/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet" />
+    @section Script{
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}}
+    <script>
+
+        function myFunction() {
+            //var userName = document.forms["myForm"]["username"].value;
+            //var age = document.forms["myForm"]["age"].value;
+            //var eMail = document.forms["myForm"]["email"].value;
+            ////if (age > 0 || age < 80) {
+            ////    document.getElementById("errorMesaage").innerHTML = "Yaş aralı....";
+            ////    return false;
+
+            ////}
+
+            // document.getElementById("errorMessageView").style.display = "";
+            // if (userName == "") {
+            //     alert("Kullanıcı İsmni Bol Geçilemez....");
+            //     document.getElementById("errorMesaage").innerHTML = "Kullanıcı İsmni Bol Geçilemez....";
+            //     return false;
+            // }
+            //  document.getElementById("errorMessageViewAge").style.display = "";
+            //if (age == > 0 || age < 80) {
+            //     alert("Yaş Aralığında olması lazım");
+            //     document.getElementById("errorMesaageAge").innerHTML = "'0-80'Yaş Aralığında Girmeniz Gerekmektedir....";
+            //     return false;
+            // }
+
+            // document.getElementById("errorMessageViewEmail").style.display = "";
+            //if (eMail == jsonData.Email) {
+            //    document.getElementById("errorMesaageEmail").innerHTML = "Email Daha Önce Alınmış....";
+            //    return false;
+            //}
+            //else {
+            //    document.getElementById("errorMesaageEmail").innerHTML = "";
+            //}
+
+            var userName = $("#username").val();
+            var password = $("#password").val();
+            var password1 = $("#password1").val();
+            var eMail = $("#email").val();
+            var age = $("#age").val();
+
+            var url = "/Security/RegisterPost";
+            var jsonData = {
+                UserName: userName,
+                Password: password,
+                ConfirmedPassword: password1,
+                Email: eMail,
+                Age: age
+            };
+
+
+            $.post(url, { jsonData }, function (data) {
+                if (data.status == 0) {
+                    alert(data.message);
+                    location.href = data.redirect;
+                }
+                if (data.status == 1) {
+                    alert(data.message);
+                    location.href = data.redirect;
+                }
+            }, "json");
+        }
+    </script>
+</head>
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Hesap Oluştur!</h1>
+                            </div>
+                            <form name="myForm" onsubmit="return myFunction()" asp-controller="Security" asp-action="Register" method="post">
+                                <div asp-validation-summary="All"></div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" asp-for="UserName" name="username" class="form-control form-control-user" id="username" placeholder="Kullanıcı Adınız">
+                                        @*<div id="errorMessageView" style="display:none">
+                                                <p id="errorMesaage" style="color:red"></p>
+                                            </div>*@
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" asp-for="Age" class="form-control form-control-user" id="age" placeholder="Yaşınız">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" asp-for="Email" class="form-control form-control-user" id="email" placeholder="Email Addresiniz">
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="password" asp-for="Password" class="form-control form-control-user" id="password" placeholder="Şifre">
+
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="password" asp-for="ConfirmedPassword" class="form-control form-control-user" id="password1" placeholder="Şifre Tekrar">
+
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-user btn-block" onclick="myFunction()">Kayıt Ol</button>
+                                @*<input type="submit" value="Kayıt Ol" class="btn btn-primary btn-user btn-block" />
+                                                            <a class="btn btn-primary btn-user btn-block" asp-area="" asp-controller="Home" asp-action="Login">Kayıt Ol</a>
+                                    <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                            Kayıt Ol
+                                        </a>*@
+                                <hr>
+                            </form>
+                            <hr>
+
+                            <div class="text-center">
+                                <a class="small" asp-area="" asp-controller="Home" asp-action="Login">Zaten Hesabınız Var mı? Giriş Yap!</a>
+                                @*<a class="small" href="login.html">Zaten Hesabınız Var mı? Giriş Yap!</a>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+</body>
+</html>
+

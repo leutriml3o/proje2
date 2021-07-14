@@ -1,0 +1,41 @@
+﻿@model Sport.Domain.Entities.NutritionList
+
+@{
+    ViewData["Title"] = "Detaylar";
+}
+
+<h3>Detaylar</h3>
+<div>
+    @*<h4>Beslenme Listesi</h4>*@
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            <label>Besin Listesi İsmi</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            <label>Toplam Kalori Değeri</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TotalCaloriValue)
+        </dd>
+        <dt class="col-sm-2">
+            <label>Beslenme Tip</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EnumNutritionType)
+        </dd>
+        <dt class="col-sm-2">
+            <label>Gelişim Türü</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EnumNutritionKind)
+        </dd>
+    </dl>
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.Id">Güncelle</a> |*@
+    <a asp-action="GetAllNutritionList" class="btn btn-primary">Beslenme Listesi</a>
+</div>

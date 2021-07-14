@@ -1,0 +1,37 @@
+﻿@model Sport.WebUI.Models.UserRolesViewModel
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <label> Kullanıcı İsmi</label>
+            </th>
+            <th>
+                <label> Kullanıcı Rolü</label>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            @foreach (string item in Model.userName)
+            {
+                <th>
+                    @Html.DisplayFor(modelItem => item)
+
+                </th>
+            }
+            @foreach (string item1 in Model.userRolName)
+            {
+                <th>
+                    @Html.DisplayFor(modelItem => item1)
+
+                </th>
+            }
+        </tr>
+    </tbody>
+</table>
+
+
+

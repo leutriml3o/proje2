@@ -1,0 +1,126 @@
+﻿@model Sport.WebUI.Entities.CalculateFatRate
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    ViewData["Title"] = "Yağ Oranı Hesapla";
+}
+
+
+@section NormalLayout{
+    <div class="main-w3pvt mian-content-wthree text-center" id="home">
+        <div class="container">
+            <div class="style-banner mx-auto">
+                <h3 class="text-wh font-weight-bold">Daha <span>Fit</span> bir görünüme sahip olmak için</h3>
+                <p class="mt-2 text-gray-700" id="find">Bu hesaplayıcı %3 maksimum hata payı ile en güvenilir hesaplamalardan biridir. Spor salonunuzdaki ölçüm cihazları %8 hata payına sahiptir.</p>
+                <!-- form -->
+                <div class="home-form-w3ls mt-5 pt-lg-4">
+                    <form asp-controller="Home" asp-action="FatRate" method="post">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <select asp-for="FatRateGender" class="form-control" id="gender">
+                                        <option value="0">Erkek</option>
+                                        <option value="1">Kadın</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <input asp-for="Waist" type="text" class="form-control" maxlength="3" placeholder="Bel Çevrenizi Giriniz(En İnce - cm)" id="waist">
+                                    <p id="waistMessage" style="color:red"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input asp-for="Neck" type="text" class="form-control" maxlength="3" placeholder="Boyun Çevrenizi Giriniz(En Geniş - cm)" id="neck">
+                                    <p id="neckMessage" style="color:red"></p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input asp-for="Height" type="text" class="form-control" maxlength="3" placeholder="Boyunuzu Giriniz(cm)" id="height">
+                                    <p id="heightMessage" style="color:red"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input asp-for="Hip" type="text" class="form-control" maxlength="3" placeholder="Kalça Çevrenizi Giriniz(En Geniş - cm)" id="hip">
+                                    <p id="hipMessage" style="color:red"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-submit btn-lg" name="submit" id="addBtn"> Hesapla</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script type="text/javascript">
+
+
+    $(document).on('click', '#addBtn', function (e) {
+        var gender = $("#gender").val();
+        var waist = $("#waist").val();
+        var neck = $("#neck").val();
+        var height = $("#height").val();
+        var hip = $("#hip").val();
+
+
+
+        if (waist == 0) {
+            document.getElementById("waistMessage").innerHTML = "Bel Çevresi Boş Geçilemez";
+            return false;
+        }
+        else {
+            document.getElementById("waistMessage").innerHTML = "";
+        }
+        if (neck == 0) {
+            document.getElementById("neckMessage").innerHTML = "Boyun Çevresi Boş Geçilemez";
+            return false;
+        }
+        else {
+            document.getElementById("neckMessage").innerHTML = "";
+        }
+        if (height == 0) {
+            document.getElementById("heightMessage").innerHTML = "Boy Boş Geçilemez";
+            return false;
+        }
+        else {
+            document.getElementById("heightMessage").innerHTML = "";
+        }
+
+        if (gender == 1) {
+            if (hip == 0) {
+                document.getElementById("hipMessage").innerHTML = "Kalça Çevresi Boş Geçilemez";
+                return false
+            }
+            else {
+                document.getElementById("hipMessage").innerHTML = "";
+            }
+        }
+
+
+        var url = "/Home/FatRatePost";
+        var jsonData = {
+            FatRateGender: gender,
+            Waist: waist,
+            Neck: neck,
+            Height: height,
+            Hip: hip,
+        };
+        $.post(url, { jsonData }, function (data) {
+            alert("Yağ Oranınız(%): " + data);
+        }, "json");
+    });
+
+    $(document).ready(function () {
+        $("#hip").hide();
+    });
+
+    $("#gender").on("change", function () {
+        console.log(gender);
+        if ($("#gender option:selected").index() == 0) {
+            $("#hip").hide();
+        } else {
+            $("#hip").show();
+        }
+    });
+
+</script>

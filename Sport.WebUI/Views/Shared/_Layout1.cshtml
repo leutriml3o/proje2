@@ -1,0 +1,158 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - Sport.WebUI</title>
+    @RenderSection("Js", required: false)
+    @RenderSection("Classlar", required: false)
+    <link href="~/webb/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/webb/css/style.css" rel="stylesheet" />
+    <link href="~/webb/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+          rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+          rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <div class="container">
+            <div class="header d-lg-flex justify-content-between align-items-center py-2 px-sm-2 px-1">
+                <!-- logo -->
+                <div id="logo">
+                    <h1><a asp-controller="Home" asp-action="Calculator"><span class="text-bl">Fit</span>ol</a></h1>
+                </div>
+                <!-- //logo -->
+                <!-- nav -->
+                <div class="nav_w3ls ml-lg-5">
+                    <nav>
+                        <label for="drop" class="toggle">Menu</label>
+                        <input type="checkbox" id="drop" />
+                        <ul class="menu">
+                            <li><a asp-controller="Home" asp-action="Calculator">Anasayfa</a></li>
+                            <li><a asp-action="Calculator" asp-controller="Home">Kalori Hesapla</a></li>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li><a asp-action="AddRoles" asp-controller="Roles">Rol Ekle</a></li>
+                            }
+
+                            @if (User.IsInRole("User") || User.IsInRole("Admin"))
+                            {
+                                <li>
+                                    <!-- First Tier Drop Down -->
+                                    <label for="drop-2" class="toggle">Besinler <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
+                                    <a>Besinler <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                    <input type="checkbox" id="drop-2" />
+                                    <ul class="inner-dropdown">
+
+                                        <li><a asp-action="Index" asp-controller="Foods">Kayıtlı Besinler</a></li>
+
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <li><a asp-action="GetAllNutritionList" asp-controller="NutritionList">Beslenme Listeleri</a></li>
+                                        }
+                                    </ul>
+                                </li>
+                            }
+                            @if (User.IsInRole("User") || User.IsInRole("Admin"))
+                            {
+                                <li>
+                                    <!-- First Tier Drop Down -->
+                                    <label for="drop-2" class="toggle">Haraketler <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
+                                    <a>Haraketler <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                    <input type="checkbox" id="drop-2" />
+                                    <ul class="inner-dropdown">
+
+                                        <li><a asp-action="Index" asp-controller="Movements">Kayıtlı Hareketler</a></li>
+
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <li><a asp-action="GetAllSportList" asp-controller="SportList">Spor Listeleri</a></li>
+                                        }
+                                    </ul>
+                                </li>
+                            }
+                            @if (User.IsInRole("User") || User.IsInRole("Admin"))
+                            {
+                            }
+                            else
+                            {
+                                <li><a asp-action="Login" asp-controller="Security">Giriş Yap</a></li>
+                                <li><a asp-action="Register" asp-controller="Security">Kayıt Ol</a></li>
+                            }
+                            @if (User.IsInRole("Admin") || User.IsInRole("User"))
+                            {
+                                <li>
+                                    <!-- First Tier Drop Down -->
+                                    <label for="drop-2" class="toggle">@User?.Identity?.Name  <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
+                                    <a>@User?.Identity?.Name <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                    <input type="checkbox" id="drop-2" />
+                                    <ul class="inner-dropdown">
+
+                                        <li><a asp-action="Profile" asp-controller="Profile">Profil</a></li>
+                                        <li><a asp-action="ProfileSetting" asp-controller="Profile">Profilimi Düzenle</a></li>
+                                        <li><a asp-action="Questions" asp-controller="NutritionList">Diyet Listesi Oluştur</a></li>
+                                        <li><a asp-action="QuestionsSport" asp-controller="SportList">Spor Programı Oluştur</a></li>
+                                        <li><a asp-action="UserNutritionListDetails" asp-controller="UserNutritionList">Beslenme Listemi Görüntüle</a></li>
+                                        <li><a asp-action="UserSportListDetails" asp-controller="UserSportList">Spor Listemi Görüntüle</a></li>
+                                        <li><a asp-action="ResetPassword" asp-controller="Security">Şifremi Yenile</a></li>
+                                        <li><a asp-action="Logout" asp-controller="Security">Çıkış Yap</a></li>
+                                    </ul>
+                                </li>
+                            }
+                            else
+                            {
+
+                            }
+
+                        </ul>
+                    </nav>
+                </div>
+                <!-- //nav -->
+            </div>
+        </div>
+    </header>
+    <!-- //header -->
+    <!-- banner -->
+    @RenderSection("NormalLayout", required: false)
+
+
+
+
+    <!-- //banner -->
+    <!-- banner bottom -->
+    <section class="w3ls-bnrbtm py-5" id="about">
+        <div class="container py-xl-5 py-lg-3">
+            @RenderBody()
+        </div>
+    </section>
+
+    <div class="copyright-w3ls py-4">
+        <div class="container">
+            <div class="row">
+                <!-- copyright -->
+                <p class="col-lg-8 copy-right-grids text-wh text-lg-left text-center mt-lg-2">
+                    © 2020
+                    <a href="#" target="_blank">FitOl</a>
+                </p>
+                <!-- //copyright -->
+                <!-- social icons -->
+
+            </div>
+        </div>
+    </div>
+    <!-- //copyright -->
+    <!-- move top icon -->
+    <a href="#home" class="move-top text-center">
+        <span class="fa fa-angle-double-up" aria-hidden="true"></span>
+    </a>
+    <!-- //move top icon -->
+    @RenderSection("Script", required: false)
+
+
+</body>
+
+</html>

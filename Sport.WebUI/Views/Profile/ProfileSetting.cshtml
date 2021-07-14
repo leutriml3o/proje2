@@ -1,0 +1,71 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<form name="myForm" asp-controller="Profile" asp-action="ProfileSetting">
+    @*<div asp-validation-summary="All"></div>*@
+    <input type="text" name="Calorie" id="Calorie" placeholder="Almanız Gereken Kalori Miktarınızı Giriniz : " required /><br />
+    @*<div id="errorMessageView" style="display:none">
+            <p id="errorMesaage" style="color:red"></p>
+        </div>*@
+    <p id="errorMesaage" style="color:red"></p>
+    <input type="text" id="Weight" placeholder="Kilonuzu Giriniz : " required /><br />
+    <input type="text" id="Height" placeholder="Boyunuzu Giriniz : " required /><br />
+    <input type="text" id="FatRate" name="FatRate" placeholder="Yağ Oranınızı Giriniz : " required /><br />
+    <button type="button" class="btn btn-success btn-lg" onclick="myFunction()">Kaydet</button>
+    @*<input type="submit" value="Register" /><br />*@
+</form>
+
+
+@section Script{
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    @*@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}*@
+    <script>
+
+        function myFunction() {
+            var userName = document.forms["myForm"]["Calorie"].value;
+            //var age = document.forms["myForm"]["age"].value;
+            //if (age > 0 || age < 80) {
+            //    document.getElementById("errorMesaage").innerHTML = "Yaş aralı....";
+            //    return false;
+
+            //}
+
+            //document.getElementById("errorMessageView").style.display = "";
+            if (userName == "") {
+                document.getElementById("errorMesaage").innerHTML = "Kullanıcı İsmni Bol Geçilemez....";
+                return false;
+            }
+            else {
+                document.getElementById("errorMesaage").innerHTML = "";
+            }
+
+            var calorie = $("#Calorie").val();
+            var weight = $("#Weight").val();
+            var height = $("#Height").val();
+            var fatRate = $("#FatRate").val();
+
+            var url = "/Profile/ProfileSettingAdd";
+            var jsonData = {
+                Calorie: calorie,
+                Weight: weight,
+                Height: height,
+                FatRate: fatRate
+            };
+
+
+            $.post(url, { jsonData }, function (data) {
+                if (data.status == 0) {
+                    alert(data.message);
+                    location.href = data.redirect;
+                }
+                if (data.status == 1) {
+                    alert(data.message);
+                    location.href = data.redirect;
+                }
+            }, "json");
+        }
+    </script>
+}

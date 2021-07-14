@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Sport.Domain.Entities.MMRelation.AreaMovements>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Area.SportDay.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Area.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movement.MovementName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movement.MovementDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Area.SportDay.Name)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Area.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Movement.MovementName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Movement.MovementDescription)
+                </td>              
+            </tr>
+        }
+    </tbody>
+</table>

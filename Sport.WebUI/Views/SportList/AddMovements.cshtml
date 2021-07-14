@@ -1,0 +1,483 @@
+﻿
+@model Sport.Domain.Entities.SportList
+
+@{
+    int i = 11;
+}
+<div class="col-md-12">
+    <div class="row">
+
+        <table class="table table-responsive table-sm table-striped">
+            <thead>
+                <tr>
+                    <th>Pazartesi </th>
+                    <th>Salı</th>
+                    <th>Çarşamba</th>
+                    <th>Perşembe</th>
+                    <th>Cuma</th>
+                    <th>Cumartesi</th>
+                    <th>Pazar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="MovementAddButton">
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Göğüs</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Göğüs</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Göğüs</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Göğüs</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Göğüs</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Göğüs</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Göğüs</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                    </td>
+                    @{i = i + 4; }
+                </tr>
+                <tr id="MovementAddButton">
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Sırt</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Sırt</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Sırt</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Sırt</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Sırt</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Sırt</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Sırt</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+
+                    </td>
+                    @{i = i + 4; }
+                </tr>
+                <tr id="MovementAddButton">
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Omuz</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Omuz</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Omuz</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Omuz</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Omuz</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Omuz</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Omuz</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                    </td>
+                    @{i = i + 4; }
+                </tr>
+                <tr id="MovementAddButton">
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Biceps</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Biceps</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Biceps</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Biceps</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Biceps</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Biceps</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Biceps</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                    </td>
+                    @{i = i + 4; }
+                </tr>
+                <tr id="MovementAddButton">
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Triceps</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Triceps</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Triceps</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Triceps</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Triceps</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Triceps</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Triceps</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i = i + 4; }
+                    </td>
+                </tr>
+                <tr id="MovementAddButton">
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Bacak</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Bacak</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Bacak</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Bacak</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Biceps</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Bacak</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Bacak</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i = i + 4; }
+                    </td>
+                </tr>
+                <tr id="MovementAddButton">
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Kardiyo</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Kardiyo</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Kardiyo</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Kardiyo</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Kardiyo</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Kardiyo</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                        @{i++;}
+                    </td>
+                    <td>
+                        <form method="post" action="/SportList/AddMovementForArea">
+                            <label>Kardiyo</label><br />
+                            <input type="text" id="bolgeGun" name="bolgeGun" value="@i" hidden="hidden" />
+                            <input type="text" id="sportListId" name="sportListId" value="@Model.Id" hidden="hidden" />
+                            <input type="submit" class="btn btn-primary" value="Hareket Ekle" />
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

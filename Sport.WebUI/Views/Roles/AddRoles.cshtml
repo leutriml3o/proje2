@@ -1,0 +1,72 @@
+﻿@model Sport.Domain.Entities.AppRole
+
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+
+<div class="form-group">
+    <select class="form-control" style="width:200px;" id="userName">
+    </select>
+    <span class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <select class="form-control" style="width:200px;" id="rolName">
+        <option selected value="0">-- Rol Seç --</option>
+        <option value="1">Admin</option>
+        <option value="2">User</option>
+    </select>
+    <span class="text-danger"></span>
+</div>
+<button type="submit" id="add_Btn" class="btn btn-primary"> Rol Ekle</button>
+
+
+
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
+
+<script type="text/javascript">
+    $.getJSON("/Roles/GetUserNameList", null, function (data) {
+        var item = "";
+        $("#userName").empty();
+
+        item += '<option value="i">-- Kullanıcı İsmi Seçiniz --</option>';
+        $.each(data, function (i, level) {
+            item += '<option value="' + level.value + '">' + level.text + '</option>'
+        });
+
+        $("#userName").html(item);
+    });
+
+    $(document).on('click', '#add_Btn', function (e) {
+        var userName = $('#userName :selected').text().toString();
+        var rolName = $('#rolName :selected').text().toString();
+        //if (userName == "") {
+        //    document.getElementById("errorMesaage").innerHTML = "Kullanıcı İsmni Bol Geçilemez....";
+        //    return false;
+        //}
+        //else {
+        //    document.getElementById("errorMesaage").innerHTML = "";
+        //}
+
+        var url = "/Roles/AddRolesPost";
+
+        $.post(url, { userName, rolName }, function (data) {
+            if (data.status == 0) {
+                alert(data.message);
+                //location.href = data.redirect;
+            }
+            if (data.status == 1) {
+                alert(data.message);
+                //location.href = data.redirect;
+            }
+        }, "json");
+    });
+</script>
+
+

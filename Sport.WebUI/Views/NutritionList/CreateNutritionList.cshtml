@@ -1,0 +1,57 @@
+﻿@model Sport.Domain.Entities.NutritionList
+
+
+@{
+    ViewData["Title"] = "Beslenme Listesi Ekle";
+}
+
+@section NormalLayout{
+    <div class="main-w3pvt mian-content-wthree text-center" id="home">
+        <div class="container">
+            <br />
+            <h3>Beslenme Listesi Oluştur</h3>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="CreateNutritionList">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label">Beslenme Listesi İsmi</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="TotalCaloriValue" class="control-label">Toplam Kalori Miktarı</label>
+                            <input asp-for="TotalCaloriValue" class="form-control" />
+                            <span asp-validation-for="TotalCaloriValue" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EnumNutritionType" class="control-label">Besin Tipi</label>
+                            <select asp-for="EnumNutritionType" class="form-control" style="width:200px;">
+                                <option value="0">Kırmızı Et </option>
+                                <option value="1">Beyaz Et</option>
+                                <option value="2">Vejeteryan </option>
+                            </select>
+                            <span asp-validation-for="EnumNutritionType" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EnumNutritionKind" class="control-label">Gelişim Türü</label>
+                            <select asp-for="EnumNutritionKind" class="form-control" style="width:200px;">
+                                <option value="0">Diyet</option>
+                                <option value="1">Koruma</option>
+                                <option value="2">Gelişme </option>
+                            </select>
+                            <span asp-validation-for="EnumNutritionKind" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Liste Oluştur" class="btn btn-primary" />
+                        </div>
+                        <div>
+                            <a asp-controller="NutritionList" asp-action="GetAllNutritionList" class="btn btn-warning">Beslenme Listesi</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}

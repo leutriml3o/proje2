@@ -1,0 +1,64 @@
+﻿@model Sport.WebUI.ViewModels.SelectFoodsAndThatViewModel
+
+
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+@section Classlar{
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="~/webb/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/webb/css/style.css" rel="stylesheet" />
+    <link href="~/chosen.min.css" rel="stylesheet" />
+}
+
+
+<input type="text" id="that" value="@Model.thatId" hidden="hidden" />
+
+<select id="multipleDropdown" multiple="multiple" class="form-control" style="height:800px">
+    @foreach (var item in Model.allFoods)
+    {
+        <option value="@item.Id">@item.Name</option>
+    }
+</select>
+<hr />
+
+
+<button id="sendSelectedFoods" class="btn btn-primary"> Listeye Besin Ekle</button>
+
+
+@section Script{
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
+    <script type="text/javascript">
+        function displayVals() {
+            var multipleValues = $("#multipleDropdown").val() || [];
+            console.log(multipleValues);
+            return multipleValues;
+        }
+        $(document).on('click', '#sendSelectedFoods', function (e) {
+            var foodss = displayVals();
+            console.log("selected foods -> " + foodss);
+            var thatId = $("#that").val();
+            console.log("selected that -> " + thatId);
+            var jsonData = {
+                "selectedFoodIdArray": foodss,
+                "thatId": thatId
+            };
+
+            var url = "/NutritionList/FoodsPost";
+
+            $.post(url, { jsonData }, function (data) {
+                alert("Listeye besin ekleme başarılı");
+                window.location.href = "https://localhost:44324/NutritionList/GetAllNutritionList";
+
+            }, "json");
+        });
+    </script>
+}
+
